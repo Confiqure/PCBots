@@ -38,9 +38,9 @@ public class Gaia extends Main {
      */
     public Gaia() {
         try {
-            submit = ImageIO.read(new File("bots/gaia/submit.png"));
-            submit2 = ImageIO.read(new File("bots/gaia/submit2.png"));
-            reply = ImageIO.read(new File("bots/gaia/reply.png"));
+            submit = ImageIO.read(new File("resources/gaia/submit.png"));
+            submit2 = ImageIO.read(new File("resources/gaia/submit2.png"));
+            reply = ImageIO.read(new File("resources/gaia/reply.png"));
             populateResponses();
             populateTopics();
         } catch (final IOException ex) {}
@@ -87,7 +87,7 @@ public class Gaia extends Main {
     }
     
     private void populateResponses() throws IOException {
-        try (final BufferedReader br = new BufferedReader(new FileReader(new File("bots/gaia/responses.txt")))) {
+        try (final BufferedReader br = new BufferedReader(new FileReader(new File("resources/gaia/responses.txt")))) {
             String line;
             int mode = 0;
             while ((line = br.readLine()) != null) {

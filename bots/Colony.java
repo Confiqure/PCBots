@@ -27,9 +27,9 @@ public class Colony extends Main {
      */
     public Colony() {
         try {
-            playerList = ImageIO.read(new File("bots/colony/playerList.png"));
-            duplicateSlots = ImageIO.read(new File("bots/colony/duplicateSlots.png"));
-            groundZero = ImageIO.read(new File("bots/colony/groundZero.png"));
+            playerList = ImageIO.read(new File("resources/colony/playerList.png"));
+            duplicateSlots = ImageIO.read(new File("resources/colony/duplicateSlots.png"));
+            groundZero = ImageIO.read(new File("resources/colony/groundZero.png"));
         } catch (final IOException ex) {
             System.err.println("Unable to load reference images");
         }

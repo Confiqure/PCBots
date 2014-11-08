@@ -1,0 +1,157 @@
+INITIAL
+awesome
+boom
+cool
+ha
+hah
+haha
+hahah
+hahaha
+lmao
+lmfao
+lol
+LOL
+neat
+sick
+whoa
+wicked
+woah
+PROCEEDING
+!
+!
+!!
+.
+...
+,
+,
+CORE
+best thing I have seen all day
+better luck next time
+most [a] thing I have seen all day
+Gaia is [a]
+Gaia is [e] [a]
+Gaians are [a]
+Gaians always surprise me
+I have never seen anything like this before
+I have no idea
+I have not seen anything quite like this before
+I agree
+I agree with the last poster
+I am unsure
+I can see how this would happen
+I do not even know
+I dig it
+I dig this
+I dig this post
+I dig this [a] post
+I dig this topic
+I dig this [a] topic
+I like it
+I like this
+I like this post
+I like this [a] post
+I like this topic
+I like this [a] topic
+I love coming onto these forums
+I love going onto these forums cause I learn [e] much
+I think you are all wrong
+I was just perusing and I came to this... not sure how to respond
+I was just surfing and I somehow came to this post
+I was just surfing and I somehow came to this [a] post
+I was just surfing and I somehow came to this topic
+I was just surfing and I somehow came to this [a] topic
+just browsing and I stumbled upon this
+just perusing and I came to this post
+just perusing and I came to this [a] post
+just perusing and I came to this topic
+just perusing and I came to this [a] topic
+no clue
+ohh okay I get it now
+[a] happy after reading this
+so this happened
+so this just happened
+this could be [e] important
+this is [a]
+this is [e] [a]
+this made my day
+this post made my day
+this [a] post made my day
+this topic made my day
+this [a] topic made my day
+this makes no sense
+what a [a] post
+what a [a] topic
+what does this even mean
+what does this mean
+what even is this
+what is happening
+yeah I understand
+yo pm me about this
+you all do not know what you are talking about
+you are all [e] dumb
+you guys are dumb
+ENDING
+.
+!
+EMOTICON
+:D
+:)
+:stare:
+:XD
+:3nod:
+:big:
+:xp:
+:whee:
+:wink:
+:o
+:shock:
+8)
+:lol:
+:P
+:ninja:
+:rofl:
+:pirate:
+:cheese:
+:dramallama:
+ADJECTIVE
+amusing
+cool
+creative
+entertaining
+fascinating
+funky
+funny
+hilarious
+interesting
+intriguing
+kooky
+ludicrous
+peculiar
+playful
+random
+ridiculous
+sick
+silly
+strange
+unnatural
+weird
+EXTRA
+epically
+extremely
+greatly
+highly
+incredibly
+noticeably
+pretty
+profoundly
+really
+remarkably
+so
+substantially
+surprisingly
+terribly
+truly
+uncommonly
+unusually
+very
+wonderfully

@@ -23,12 +23,12 @@ public class Bloons extends Main {
      */
     public Bloons() {
         try {
-            play = ImageIO.read(new File("bots/bloons/play.png"));
-            load = ImageIO.read(new File("bots/bloons/load.png"));
-            go = ImageIO.read(new File("bots/bloons/go.png"));
-            menu = ImageIO.read(new File("bots/bloons/menu.png"));
-            offerMenu = ImageIO.read(new File("bots/bloons/offerMenu.png"));
-            rankup = ImageIO.read(new File("bots/bloons/rankup.png"));
+            play = ImageIO.read(new File("resources/bloons/play.png"));
+            load = ImageIO.read(new File("resources/bloons/load.png"));
+            go = ImageIO.read(new File("resources/bloons/go.png"));
+            menu = ImageIO.read(new File("resources/bloons/menu.png"));
+            offerMenu = ImageIO.read(new File("resources/bloons/offerMenu.png"));
+            rankup = ImageIO.read(new File("resources/bloons/rankup.png"));
         } catch (final IOException ex) {
             System.err.println("Unable to load reference images");
         }

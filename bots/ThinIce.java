@@ -43,20 +43,20 @@ public class ThinIce extends Main {
         try {
             r = new Robot();
             rand = new Random();
-            yes = ImageIO.read(new File("bots/thinice/yes.png"));
-            start = ImageIO.read(new File("bots/thinice/start.png"));
-            finish = ImageIO.read(new File("bots/thinice/finish.png"));
-            coin = ImageIO.read(new File("bots/thinice/coin.png"));
-            map = ImageIO.read(new File("bots/thinice/map.png"));
-            disconnect = ImageIO.read(new File("bots/thinice/disconnect.png"));
-            code042 = ImageIO.read(new File("bots/thinice/042.png"));
-            code052 = ImageIO.read(new File("bots/thinice/052.png"));
-            code072 = ImageIO.read(new File("bots/thinice/072.png"));
-            code082 = ImageIO.read(new File("bots/thinice/082.png"));
-            code092 = ImageIO.read(new File("bots/thinice/092.png"));
-            code102 = ImageIO.read(new File("bots/thinice/102.png"));
-            newLevel = ImageIO.read(new File("bots/thinice/newLevel.png"));
-            try (final BufferedReader br = new BufferedReader(new FileReader(new File("bots/thinice/levels.txt")))) {
+            yes = ImageIO.read(new File("resources/thinice/yes.png"));
+            start = ImageIO.read(new File("resources/thinice/start.png"));
+            finish = ImageIO.read(new File("resources/thinice/finish.png"));
+            coin = ImageIO.read(new File("resources/thinice/coin.png"));
+            map = ImageIO.read(new File("resources/thinice/map.png"));
+            disconnect = ImageIO.read(new File("resources/thinice/disconnect.png"));
+            code042 = ImageIO.read(new File("resources/thinice/042.png"));
+            code052 = ImageIO.read(new File("resources/thinice/052.png"));
+            code072 = ImageIO.read(new File("resources/thinice/072.png"));
+            code082 = ImageIO.read(new File("resources/thinice/082.png"));
+            code092 = ImageIO.read(new File("resources/thinice/092.png"));
+            code102 = ImageIO.read(new File("resources/thinice/102.png"));
+            newLevel = ImageIO.read(new File("resources/thinice/newLevel.png"));
+            try (final BufferedReader br = new BufferedReader(new FileReader(new File("resources/thinice/levels.txt")))) {
                 String line;
                 while ((line = br.readLine()) != null) {
                     final String[] parts = line.split(":");

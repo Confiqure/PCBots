@@ -51,8 +51,8 @@ public abstract class Main {
             images = new Images();
             mouse = new Mouse();
             keyboard = new Keyboard();
-            chrome = ImageIO.read(new File("bots/chrome.png"));
-            netbeans = ImageIO.read(new File("bots/netbeans.png"));
+            chrome = ImageIO.read(new File("resources/chrome.png"));
+            netbeans = ImageIO.read(new File("resources/netbeans.png"));
         } catch (final AWTException | IOException ex) {}
         Time.sleep(2000);
         beginThread();
