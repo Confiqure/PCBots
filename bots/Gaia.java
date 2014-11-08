@@ -47,6 +47,12 @@ public class Gaia extends Main {
         System.out.println("Loaded " + forums.size() + " topics with over " + (initial.size() * proceeding.size() * core.size() * ending.size() * emoticon.size() * 2) + " possible responses");
     }
     
+    /**
+     *
+     * Main method.
+     * 
+     * @param args no arguments necessary
+     */
     public static void main(final String[] args) {
         final Gaia gaia = new Gaia();
         gaia.execute();

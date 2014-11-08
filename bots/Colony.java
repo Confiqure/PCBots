@@ -39,7 +39,7 @@ public class Colony extends Main {
      * 
      * Main method.
      * 
-     * @param args
+     * @param args no arguments necessary
      */
     public static void main(final String[] args) {
         final Colony colony = new Colony();
