@@ -3,9 +3,7 @@ package bots;
 import com.github.confiqure.logic.Images;
 import com.github.confiqure.util.Time;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
-import javax.imageio.ImageIO;
 
 /**
  *
@@ -23,12 +21,12 @@ public class Bloons extends Main {
      */
     public Bloons() {
         try {
-            play = ImageIO.read(new File("resources/bloons/play.png"));
-            load = ImageIO.read(new File("resources/bloons/load.png"));
-            go = ImageIO.read(new File("resources/bloons/go.png"));
-            menu = ImageIO.read(new File("resources/bloons/menu.png"));
-            offerMenu = ImageIO.read(new File("resources/bloons/offerMenu.png"));
-            rankup = ImageIO.read(new File("resources/bloons/rankup.png"));
+            play = loadImage("/resources/bloons/play.png");
+            load = loadImage("/resources/bloons/load.png");
+            go = loadImage("/resources/bloons/go.png");
+            menu = loadImage("/resources/bloons/menu.png");
+            offerMenu = loadImage("/resources/bloons/offerMenu.png");
+            rankup = loadImage("/resources/bloons/rankup.png");
         } catch (final IOException ex) {
             System.err.println("Unable to load reference images");
         }
@@ -58,8 +56,8 @@ public class Bloons extends Main {
     private void startGame() {
         long timeout;
         mouse.click(881, 569); //PLAY
-        timeout = Time.millis() + 5000;
-        /*while (!equals(r.createScreenCapture(new Rectangle(618, 384, 40, 40)), load)) {
+        /*timeout = Time.millis() + 5000;
+        while (!equals(r.createScreenCapture(new Rectangle(618, 384, 40, 40)), load)) {
             if (Time.millis() > timeout) {
                 startGame();
                 return;

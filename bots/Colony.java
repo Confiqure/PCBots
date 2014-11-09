@@ -4,10 +4,8 @@ import com.github.confiqure.logic.Images;
 import com.github.confiqure.util.Time;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.util.Random;
-import javax.imageio.ImageIO;
 
 /**
  *
@@ -27,9 +25,9 @@ public class Colony extends Main {
      */
     public Colony() {
         try {
-            playerList = ImageIO.read(new File("resources/colony/playerList.png"));
-            duplicateSlots = ImageIO.read(new File("resources/colony/duplicateSlots.png"));
-            groundZero = ImageIO.read(new File("resources/colony/groundZero.png"));
+            playerList = loadImage("/resources/colony/playerList.png");
+            duplicateSlots = loadImage("/resources/colony/duplicateSlots.png");
+            groundZero = loadImage("/resources/colony/groundZero.png");
         } catch (final IOException ex) {
             System.err.println("Unable to load reference images");
         }

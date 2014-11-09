@@ -6,7 +6,6 @@ import com.github.confiqure.logic.Images;
 import com.github.confiqure.util.Time;
 import java.awt.AWTException;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 
@@ -51,11 +50,24 @@ public abstract class Main {
             images = new Images();
             mouse = new Mouse();
             keyboard = new Keyboard();
-            chrome = ImageIO.read(new File("resources/chrome.png"));
-            netbeans = ImageIO.read(new File("resources/netbeans.png"));
+            chrome = loadImage("/resources/chrome.png");
+            netbeans = loadImage("/resources/netbeans.png");
         } catch (final AWTException | IOException ex) {}
         Time.sleep(2000);
         beginThread();
+    }
+    
+    /**
+     *
+     * Loads internal image files.
+     * 
+     * @param path path of resource
+     * @return image requested as a BufferedImage object
+     * @throws IOException
+     * @see java.awt.image.BufferedImage
+     */
+    public final BufferedImage loadImage(final String path) throws IOException {
+        return ImageIO.read(this.getClass().getResourceAsStream(path));
     }
     
     /**
@@ -74,15 +86,12 @@ public abstract class Main {
     public abstract void exit();
     
     private void beginThread() {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (true) {
-                    Time.sleep(1000);
-                    if (Images.equals(images.screenshot(86, 25, 93, 16), netbeans)) {
-                        exit();
-                        System.exit(0);
-                    }
+        new Thread(() -> {
+            while (true) {
+                Time.sleep(1000);
+                if (Images.equals(images.screenshot(86, 25, 93, 16), netbeans)) {
+                    exit();
+                    System.exit(0);
                 }
             }
         }).start();

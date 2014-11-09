@@ -8,8 +8,6 @@ import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URI;
@@ -18,7 +16,6 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
-import javax.imageio.ImageIO;
 
 /**
  *
@@ -38,9 +35,9 @@ public class Gaia extends Main {
      */
     public Gaia() {
         try {
-            submit = ImageIO.read(new File("resources/gaia/submit.png"));
-            submit2 = ImageIO.read(new File("resources/gaia/submit2.png"));
-            reply = ImageIO.read(new File("resources/gaia/reply.png"));
+            submit = loadImage("/resources/gaia/submit.png");
+            submit2 = loadImage("/resources/gaia/submit2.png");
+            reply = loadImage("/resources/gaia/reply.png");
             populateResponses();
             populateTopics();
         } catch (final IOException ex) {}
@@ -93,7 +90,7 @@ public class Gaia extends Main {
     }
     
     private void populateResponses() throws IOException {
-        try (final BufferedReader br = new BufferedReader(new FileReader(new File("resources/gaia/responses.txt")))) {
+        try (final BufferedReader br = new BufferedReader(new InputStreamReader(this.getClass().getResourceAsStream("/resources/gaia/responses.txt")))) {
             String line;
             int mode = 0;
             while ((line = br.readLine()) != null) {

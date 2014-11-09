@@ -11,7 +11,6 @@ import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -43,20 +42,20 @@ public class ThinIce extends Main {
         try {
             r = new Robot();
             rand = new Random();
-            yes = ImageIO.read(new File("resources/thinice/yes.png"));
-            start = ImageIO.read(new File("resources/thinice/start.png"));
-            finish = ImageIO.read(new File("resources/thinice/finish.png"));
-            coin = ImageIO.read(new File("resources/thinice/coin.png"));
-            map = ImageIO.read(new File("resources/thinice/map.png"));
-            disconnect = ImageIO.read(new File("resources/thinice/disconnect.png"));
-            code042 = ImageIO.read(new File("resources/thinice/042.png"));
-            code052 = ImageIO.read(new File("resources/thinice/052.png"));
-            code072 = ImageIO.read(new File("resources/thinice/072.png"));
-            code082 = ImageIO.read(new File("resources/thinice/082.png"));
-            code092 = ImageIO.read(new File("resources/thinice/092.png"));
-            code102 = ImageIO.read(new File("resources/thinice/102.png"));
-            newLevel = ImageIO.read(new File("resources/thinice/newLevel.png"));
-            try (final BufferedReader br = new BufferedReader(new FileReader(new File("resources/thinice/levels.txt")))) {
+            yes = loadImage("/resources/thinice/yes.png");
+            start = loadImage("/resources/thinice/start.png");
+            finish = loadImage("/resources/thinice/finish.png");
+            coin = loadImage("/resources/thinice/coin.png");
+            map = loadImage("/resources/thinice/map.png");
+            disconnect = loadImage("/resources/thinice/disconnect.png");
+            code042 = loadImage("/resources/thinice/042.png");
+            code052 = loadImage("/resources/thinice/052.png");
+            code072 = loadImage("/resources/thinice/072.png");
+            code082 = loadImage("/resources/thinice/082.png");
+            code092 = loadImage("/resources/thinice/092.png");
+            code102 = loadImage("/resources/thinice/102.png");
+            newLevel = loadImage("/resources/thinice/newLevel.png");
+            try (final BufferedReader br = new BufferedReader(new InputStreamReader(this.getClass().getResourceAsStream("/resources/thinice/levels.txt")))) {
                 String line;
                 while ((line = br.readLine()) != null) {
                     final String[] parts = line.split(":");
@@ -93,27 +92,24 @@ public class ThinIce extends Main {
     
     private void startMonitoring() {
         log("Initializing threads");
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                BufferedImage next, old = images.screenshot(0, 0, Toolkit.getDefaultToolkit().getScreenSize().width, Toolkit.getDefaultToolkit().getScreenSize().height - 40);
-                while (true) {
-                    Time.sleep(600000);
-                    if (Images.equals((next = images.screenshot(0, 0, Toolkit.getDefaultToolkit().getScreenSize().width, Toolkit.getDefaultToolkit().getScreenSize().height - 40)), old)) {
-                        try {
-                            if (isProcessRunning("itunes.exe")) {
-                                Toolkit.getDefaultToolkit().beep();
-                            } else {
-                                log("Screen has not changed for 10 minutes, forcing shut down");
-                                ImageIO.write(next, "png", new File("shutdown.png"));
-                                Runtime.getRuntime().exec("shutdown.exe -s");
-                                exit();
-                                System.exit(0);
-                            }
-                        } catch (final IOException ex) {}
-                    } else {
-                        old = next;
-                    }
+        new Thread(() -> {
+            BufferedImage next, old = images.screenshot(0, 0, Toolkit.getDefaultToolkit().getScreenSize().width, Toolkit.getDefaultToolkit().getScreenSize().height - 40);
+            while (true) {
+                Time.sleep(600000);
+                if (Images.equals((next = images.screenshot(0, 0, Toolkit.getDefaultToolkit().getScreenSize().width, Toolkit.getDefaultToolkit().getScreenSize().height - 40)), old)) {
+                    try {
+                        if (isProcessRunning("itunes.exe")) {
+                            Toolkit.getDefaultToolkit().beep();
+                        } else {
+                            log("Screen has not changed for 10 minutes, forcing shut down");
+                            ImageIO.write(next, "png", new File("shutdown.png"));
+                            Runtime.getRuntime().exec("shutdown.exe -s");
+                            exit();
+                            System.exit(0);
+                        }
+                    } catch (final IOException ex) {}
+                } else {
+                    old = next;
                 }
             }
         }).start();
