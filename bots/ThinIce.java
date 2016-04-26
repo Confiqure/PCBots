@@ -31,7 +31,7 @@ public class ThinIce extends Main {
     
     private Robot r;
     private Random rand;
-    private BufferedImage yes, start, finish, coin, map, disconnect, code042, code052, code072, code082, code092, code102, newLevel, score;
+    private BufferedImage yes, start, finish, coin, map, code022, code042, code052, code072, code082, code092, code102, newLevel, score;
     private final HashMap<Integer, char[]> levels = new HashMap<>();
     private int gamesPlayed = 0;
     private long startTime;
@@ -47,7 +47,7 @@ public class ThinIce extends Main {
             finish = loadImage("/resources/thinice/finish.png");
             coin = loadImage("/resources/thinice/coin.png");
             map = loadImage("/resources/thinice/map.png");
-            disconnect = loadImage("/resources/thinice/disconnect.png");
+            code022 = loadImage("/resources/thinice/022.png");
             code042 = loadImage("/resources/thinice/042.png");
             code052 = loadImage("/resources/thinice/052.png");
             code072 = loadImage("/resources/thinice/072.png");
@@ -155,7 +155,9 @@ public class ThinIce extends Main {
         int level = 1, code = level * 10 + 1;
         score = images.screenshot(613, 129, 40, 24);
         while (true) {
-            if (level == 4 && Images.contains(images.screenshot(GAME_WINDOW), code042)) {
+            if (level == 2 && Images.contains(images.screenshot(GAME_WINDOW), code022)) {
+                code = 22;
+            } else if (level == 4 && Images.contains(images.screenshot(GAME_WINDOW), code042)) {
                 code = 42;
             } else if (level == 5 && Images.contains(images.screenshot(GAME_WINDOW), code052)) {
                 code = 52;
@@ -269,14 +271,12 @@ public class ThinIce extends Main {
             }
             Time.sleep(500);
         }
-        while (!Images.contains(images.screenshot(441, 202, 475, 351), coin)) {
-            click(863, 636); //finish
-            Time.sleep(1000);
-        }
         while (!Images.contains(images.screenshot(GAME_WINDOW), map)) {
-            click(881, 233); //exit
+            click(860, 645); //finish
             Time.sleep(2000);
         }
+        click(674, 587); //done
+        Time.sleep(1000);
     }
     
     private void click(final int x, final int y) {
